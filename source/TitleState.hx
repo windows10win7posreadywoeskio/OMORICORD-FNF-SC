@@ -124,7 +124,7 @@ class TitleState extends MusicBeatState
 	{
 		persistentUpdate = true;
 
-		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.WHITE);
 		// bg.antialiasing = FlxG.save.data.antialiasing;
 		// bg.setGraphicSize(Std.int(bg.width * 0.6));
 		// bg.updateHitbox();
@@ -173,7 +173,7 @@ class TitleState extends MusicBeatState
 		add(credGroup);
 		textGroup = new FlxGroup();
 
-		blackScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		blackScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.WHITE);
 		credGroup.add(blackScreen);
 
 		credTextShit = new Alphabet(0, 0, "omori\ni have no idea\nhazel\nnep", true);
@@ -448,9 +448,10 @@ class TitleState extends MusicBeatState
 		if (!skippedIntro)
 		{
 			remove(ngSpr);
-
-			FlxG.camera.flash(FlxColor.WHITE, 4);
 			remove(credGroup);
+
+			// FlxG.camera.flash(FlxColor.BLACK, 4); we dont want that
+			
 
 			FlxTween.tween(logoBl,{y: -100}, 1.4, {ease: FlxEase.expoInOut});
 

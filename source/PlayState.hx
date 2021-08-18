@@ -3259,7 +3259,7 @@ class PlayState extends MusicBeatState
 								{
 									if (PlayStateChangeables.botPlay)
 									{
-										daNote.rating = "bad";
+										daNote.rating = "sicks";
 										goodNoteHit(daNote);
 									}
 									else
