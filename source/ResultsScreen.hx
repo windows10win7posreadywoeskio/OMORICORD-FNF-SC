@@ -69,7 +69,7 @@ class ResultsScreen extends FlxSubState
 
         background.alpha = 0;
 
-        text = new FlxText(20,-55,0,"Song Cleared!");
+        text = new FlxText(20,-55,0,"BF and his GF won the fight!");
         text.size = 34;
         text.setBorderStyle(FlxTextBorderStyle.OUTLINE,FlxColor.BLACK,4,1);
         text.color = FlxColor.WHITE;
@@ -80,7 +80,7 @@ class ResultsScreen extends FlxSubState
         if (PlayState.isStoryMode)
         {
             score = PlayState.campaignScore;
-            text.text = "Week Cleared!";
+            text.text = "BF and his GF won the fight! Week Cleared.";
         }
 
         var sicks = PlayState.isStoryMode ? PlayState.campaignSicks : PlayState.sicks;
