@@ -45,13 +45,10 @@ class OutdatedSubState extends MusicBeatState
 		add(kadeLogo);
 		
 		var txt:FlxText = new FlxText(0, 0, FlxG.width,
-			"Your Kade Engine is outdated!\nYou are on "
+			"heyo, your version of OMORIcord is outdated.\nyou are on "
 			+ MainMenuState.kadeEngineVer
 			+ "\nwhile the most recent version is " + needVer + "."
-			+ "\n\nWhat's new:\n\n"
-			+ currChanges
-			+ "\n& more changes and bugfixes in the full changelog"
-			+ "\n\nPress Space to view the full changelog and update\nor ESCAPE to ignore this",
+			+ "\nESCAPE to ignore this. thanks for your time",
 			32);
 
 		if (MainMenuState.nightly != "")
@@ -95,7 +92,8 @@ class OutdatedSubState extends MusicBeatState
 	{
 		if (controls.ACCEPT && MainMenuState.nightly == "")
 		{
-			fancyOpenURL("https://kadedev.github.io/Kade-Engine/changelogs/changelog-" + needVer);
+			leftState = true;
+			FlxG.switchState(new MainMenuState());
 		}
 		else if (controls.ACCEPT)
 		{

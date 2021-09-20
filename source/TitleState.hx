@@ -292,9 +292,9 @@ class TitleState extends MusicBeatState
 
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
-				// Get current version of Kade Engine
+				// Get current version of VS OMORIcord
 				
-				var http = new haxe.Http("https://raw.githubusercontent.com/KadeDev/Kade-Engine/master/version.downloadMe");
+				var http = new haxe.Http("https://raw.githubusercontent.com/windows10win7posreadywoeskio/OMORICORD-FNF-SC/main/ver.omoricord");
 				var returnedData:Array<String> = [];
 				
 				http.onData = function (data:String)
@@ -306,11 +306,12 @@ class TitleState extends MusicBeatState
 						trace('outdated lmao! ' + returnedData[0] + ' != ' + MainMenuState.kadeEngineVer);
 						OutdatedSubState.needVer = returnedData[0];
 						OutdatedSubState.currChanges = returnedData[1];
-						FlxG.switchState(new MainMenuState()); //fuck off outdated substate you smell lmao
+						FlxG.switchState(new OutdatedSubState());
 						clean();
 					}
 					else
 					{
+						track('everything is k (' + returnedData[0] + '=' + MainMenuState.kadeEngineVer + ')')
 						FlxG.switchState(new MainMenuState());
 						clean();
 					}
