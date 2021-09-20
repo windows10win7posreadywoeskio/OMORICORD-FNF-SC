@@ -3339,7 +3339,7 @@ class PlayState extends MusicBeatState
 								spr.playAnim('static');
 								spr.centerOffsets();
 							}
-					}); //yeaa ez
+					}); //if i coded this right then we should get botplay cpu strums
 			}
 		}
 
@@ -3381,7 +3381,7 @@ class PlayState extends MusicBeatState
 		#if cpp
 		if (luaModchart != null)
 		{
-			luaModchart.die();
+			luaModchart.die(); // why did modchart die
 			luaModchart = null;
 		}
 		#end
