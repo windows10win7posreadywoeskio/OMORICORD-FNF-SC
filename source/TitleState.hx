@@ -311,7 +311,7 @@ class TitleState extends MusicBeatState
 					}
 					else
 					{
-						track('everything is k (' + returnedData[0] + '=' + MainMenuState.kadeEngineVer + ')')
+						track('everything is k (' + returnedData[0] + '=' + MainMenuState.kadeEngineVer + ')');
 						FlxG.switchState(new MainMenuState());
 						clean();
 					}
