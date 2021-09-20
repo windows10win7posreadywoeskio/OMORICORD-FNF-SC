@@ -3259,7 +3259,7 @@ class PlayState extends MusicBeatState
 								{
 									if (PlayStateChangeables.botPlay)
 									{
-										daNote.rating = "sicks";
+										daNote.rating = "sick";
 										goodNoteHit(daNote);
 									}
 									else
@@ -3331,6 +3331,15 @@ class PlayState extends MusicBeatState
 							//spr.centerOffsets();
 						}
 					});
+				if (FlxG.save.data.cpuStrums)
+					cpuStrums.forEach(function(spr:StaticArrow)
+					{
+						if (spr.animation.finished)
+							{
+								spr.playAnim('static');
+								spr.centerOffsets();
+							}
+					}); //yeaa ez
 			}
 		}
 
