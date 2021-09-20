@@ -24,8 +24,6 @@ class OptionsMenu extends MusicBeatState
 	var selector:FlxText;
 	var curSelected:Int = 0;
 
-	FlxG.sound.playMusic(Paths.music('options'));
-
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
 			new DFJKOption(controls),
@@ -91,6 +89,8 @@ class OptionsMenu extends MusicBeatState
 		clean();
 		instance = this;
 		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image("menuDesat"));
+
+		FlxG.sound.playMusic(Paths.music('options')); // yes
 
 		menuBG.color = 0xFFea71fd;
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
