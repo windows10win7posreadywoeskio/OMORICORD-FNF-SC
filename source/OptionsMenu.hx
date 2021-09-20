@@ -16,6 +16,13 @@ import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
+import flixel.FlxObject;
+import flixel.effects.FlxFlicker;
+import flixel.graphics.frames.FlxAtlasFrames;
+
+#if windows
+import Discord.DiscordClient;
+#end
 
 class OptionsMenu extends MusicBeatState
 {
@@ -89,8 +96,12 @@ class OptionsMenu extends MusicBeatState
 		clean();
 		instance = this;
 		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image("menuDesat"));
+		#if windows
+		// Updating Discord Rich Presence
+		DiscordClient.changePresence("Options - At the Options Menu", null);
+		#end
 
-		FlxG.sound.playMusic(Paths.music('options')); // yes
+		FlxG.sound.playMusic(Paths.music('settings')); // yes
 
 		menuBG.color = 0xFFea71fd;
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
